@@ -25,13 +25,3 @@ function duplicateEncode2(word: string): string {
 
     return result;
 }
-
-function duplicateEncode3(word: string): string {
-    return word
-        .toLowerCase()
-        .split("")
-        .map((a, i, w) => {
-            return w.indexOf(a) == w.lastIndexOf(a) ? "(" : ")";
-        })
-        .join("");
-}
