@@ -1,0 +1,7 @@
+{
+    "include": ["codewars", "leetcode/ts"],
+    "compilerOptions": {
+        "outDir": "build",
+        "target": "ES6"
+    }
+}

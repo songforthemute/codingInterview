@@ -1,0 +1,22 @@
+{
+    "name": "codinginterview",
+    "version": "1.0.0",
+    "description": "record with preparing coding interview",
+    "scripts": {
+        "build": "tsc"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/songforthemute/codingInterview.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/songforthemute/codingInterview/issues"
+    },
+    "homepage": "https://github.com/songforthemute/codingInterview#readme",
+    "devDependencies": {
+        "ts-node": "^10.8.1"
+    }
+}
