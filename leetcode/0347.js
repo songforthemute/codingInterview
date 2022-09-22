@@ -28,13 +28,11 @@ const topKFrequent = (nums, k) => {
             }
         }
 
-        return arr;
+        return arr.sort((a, b) => b[1] - a[1]);
     };
 
     const result = [];
-    const calculated = sorting(nums.sort((a, b) => a - b)).sort(
-        (a, b) => b[1] - a[1]
-    );
+    const calculated = sorting(nums.sort((a, b) => a - b));
 
     for (let i = 0; i < k; i++) result.push(calculated[i][0]);
 
