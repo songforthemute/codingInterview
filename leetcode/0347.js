@@ -1,5 +1,4 @@
 // 347. Top K Frequent Elements
-
 /**
  * @param {number[]} nums
  * @param {number} k
@@ -7,7 +6,7 @@
  */
 
 const topKFrequent = (nums, k) => {
-    if (nums.length === 1) return [nums[0]];
+    if (nums.length === 1) return nums;
 
     const sorting = (origin, arr = []) => {
         let count = 0;
@@ -32,11 +31,12 @@ const topKFrequent = (nums, k) => {
         return arr;
     };
 
-    const sorted = nums.sort((a, b) => a - b);
-    const result = sorting(sorted).sort((a, b) => b[1] - a[1]);
-    const answer = [];
+    const result = [];
+    const calculated = sorting(nums.sort((a, b) => a - b)).sort(
+        (a, b) => b[1] - a[1]
+    );
 
-    for (let i = 0; i < k; i++) answer.push(result[i][0]);
+    for (let i = 0; i < k; i++) result.push(calculated[i][0]);
 
-    return answer;
+    return result;
 };
