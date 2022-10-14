@@ -21,7 +21,7 @@ function solution(number) {
         }
     };
 
-    for (let i = 0; i < number.length - 1; i++) {
+    for (let i = 0; i < number.length - 2; i++) {
         DFS([number[i]], i);
     }
 
