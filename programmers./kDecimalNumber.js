@@ -25,29 +25,16 @@ function solution(n, k) {
         }
 
         kDecimal = String(nth) + kDecimal;
-
         pointer *= k;
     }
 
-    let candidates = [];
-    let buffer = "";
+    kDecimal.split("0").forEach((v) => {
+        num = Number(v);
 
-    for (let i = 0; i < kDecimal.length; i++) {
-        if (kDecimal[i] !== "0") buffer += kDecimal[i];
-        else if (buffer.length) {
-            candidates.push(Number(buffer));
-            buffer = "";
-        }
+        if (num === 1 || !num) return;
 
-        if (i === kDecimal.length - 1 && buffer.length)
-            candidates.push(Number(buffer));
-    }
-
-    candidates.forEach((v) => {
-        if (v === 1) return;
-
-        for (let i = 2; i <= Math.sqrt(v); i++) {
-            if (v % i === 0) return;
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return;
         }
 
         count++;
