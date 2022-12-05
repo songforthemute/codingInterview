@@ -22,14 +22,9 @@ const solution = (n, computers) => {
     };
 
     for (let i = 0; i < n; i++) {
-        const node = computers[i];
-        const reduce = node.reduceRight((prev, curr) => prev + curr);
-
         if (visited[i]) continue;
-        if (reduce === n) return 1;
 
-        DFS(node, i);
-
+        DFS(computers[i], i);
         result++;
     }
 
