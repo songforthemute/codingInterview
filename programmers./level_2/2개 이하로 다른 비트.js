@@ -7,20 +7,15 @@
 
 const solution = (numbers) => {
     return numbers.map((number) => {
-        if (number % 2 === 0) {
-            return number + 1;
-        }
+        if (number % 2 === 0) return number + 1;
 
         let numberBinary = ["0", ...number.toString(2).split("")];
+        let lastZeroIndex = numberBinary.lastIndexOf("0");
 
-        for (let i = numberBinary.length - 1; i >= 0; i--) {
-            if (numberBinary[i] === "0") {
-                numberBinary[i] = "1";
-                numberBinary[i + 1] = "0";
+        numberBinary[lastZeroIndex] = "1";
+        numberBinary[lastZeroIndex + 1] = "0";
 
-                return parseInt(numberBinary.join(""), 2);
-            }
-        }
+        return parseInt(numberBinary.join(""), 2);
     });
 };
 
