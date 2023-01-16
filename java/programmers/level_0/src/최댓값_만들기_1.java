@@ -1,5 +1,4 @@
 public class 최댓값_만들기_1 {
-
   static int solution(int[] numbers) {
 
     int answer = 0;
