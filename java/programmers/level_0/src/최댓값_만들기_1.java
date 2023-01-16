@@ -4,7 +4,6 @@ public class 최댓값_만들기_1 {
 
     int answer = 0;
     int tmp = numbers[0];
-
     for (int i = 0; i < numbers.length; i++) {
       if (numbers[0] < numbers[i]) {
         numbers[0] = numbers[i];
