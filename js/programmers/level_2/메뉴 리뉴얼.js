@@ -12,57 +12,70 @@ const solution = (orders, course) => {
     const charList = [];
 
     let buffer = [];
-    let max = 2;
+    let maxFreq = 2;
 
-    orders.forEach((str) => {
-        for (let i = 0; i < str.length; i++) {
-            if (charMap.has(str[i]))
-                charMap.set(str[i], charMap.get(str[i]) + 1);
-            else charMap.set(str[i], 1);
+    // Filter char being found more than twice
+    orders.forEach((order) => {
+        for (let i = 0; i < order.length; i++) {
+            // If unregistered char
+            if (!charMap.get(order[i])) {
+                charMap.set(order[i], 1);
+            }
+            // Add to charList if this char being found more than twice
+            else if (charMap.get(order[i]) === 1) {
+                charMap.set(order[i], 2);
+                charList.push(order[i]);
+            }
         }
     });
 
-    charMap.forEach((count, char) => {
-        if (count >= 2) charList.push(char);
-    });
-
+    // Ordering charList
     charList.sort();
 
-    const DFS = (arr = [], idx = 0, len = 0) => {
-        if (arr.length === len) {
+    // Define DFS
+    const DFS = (str = "", idx = 0, len = 0) => {
+        if (str.length === len) {
             let count = 0;
 
+            // Check this combination
             orders.forEach((order) => {
-                for (const char of arr) {
-                    if (!order.includes(char)) return;
+                for (let i = 0; i < str.length; i++) {
+                    // Jump this order if can't find this combination
+                    if (!order.includes(str[i])) return;
                 }
+                // If found this combination
                 count++;
             });
 
-            if (count >= max) {
-                buffer.push([arr.join(""), count]);
-                if (max < count) max = count;
+            // If this combination is equal to maximum frequency
+            if (count === maxFreq) buffer.push(str);
+            // If renewed maximum frequency on same length
+            else if (count > maxFreq) {
+                buffer = [str];
+                maxFreq = count;
             }
+
             return;
         }
 
         for (let i = idx; i < charList.length; i++) {
-            DFS([...arr, charList[i]], i + 1, len);
+            // If searchable length shortter than required length
+            if (len - str.length > charList.length - i) break;
+
+            // Recursion till required length
+            DFS(str + charList[i], i + 1, len);
         }
     };
 
     course.forEach((len) => {
         if (len <= charList.length) {
-            DFS([], 0, len);
-        }
+            DFS("", 0, len);
 
-        if (buffer.length) {
-            buffer.forEach(([str, count]) => {
-                if (count === max) result.push(str);
-            });
-
-            buffer = [];
-            max = 2;
+            if (buffer.length) {
+                result.push(...buffer);
+                buffer = [];
+                maxFreq = 2;
+            }
         }
     });
 
