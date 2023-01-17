@@ -1,5 +1,4 @@
 public class 반복_문자_출력하기 {
-
   public static String solution(String my_string, int n) {
     String answer = "";
 
