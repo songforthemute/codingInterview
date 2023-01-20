@@ -1,1 +1,8 @@
+
 .idea
+.DS_Store
+cpp/cpp.xcodeproj
+cpp/cpp.xcodeproj/*.pbxproj
+cpp/cpp.xcodeproj/project.pbxproj
+cpp/cpp.xcodeproj/project.xcworkspace/contents.xcworkspacedata
+cpp/cpp.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
