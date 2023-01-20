@@ -11,8 +11,8 @@
 
 ## _Language_
 
--   [JavaScript](https://github.com/songforthemute/codingInterview/tree/master/js), [C++](https://github.com/songforthemute/codingInterview/tree/master/cpp) _by_ [_songforthemute_](https://github.com/songforthemute)
--   [Java](https://github.com/songforthemute/codingInterview/tree/master/java) _by_ [_0rganicPotato_](https://github.com/0rganicPotato)
+-   **JavaScript**, C++ _by_ [_songforthemute_](https://github.com/songforthemute)
+-   **Java** _by_ [_0rganicPotato_](https://github.com/0rganicPotato)
 
 ---
 
@@ -20,6 +20,17 @@
 
 -   각 언어의 programmers 폴더의 각 레벨별 폴더 내에 커밋명 혹은 파일명으로 저장되어 있으므로, Ctrl + F 혹은 F3을 이용하여 문제 이름으로 검색하시면 쉽게 찾을 수 있습니다.<br/>
     _(It is saved as a commit name or file name in each level folder of each language's '**programmers**' folder, so you can easily find it by searching with a problem name using Ctrl + F or F3.)_
+
+    | 🔗         | **_JavaScript_**                                                                               | **_Java_**                                                                                           | **_C++_**                                                                                       |
+    | ---------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |
+    | **_Lv.0_** | [_Link_](https://github.com/songforthemute/codingInterview/tree/master/js/programmers/level_0) | [_Link_](https://github.com/songforthemute/codingInterview/tree/master/java/programmers/level_0/src) | [_Link_](https://github.com/songforthemute/codingInterview/tree/master/cpp/programmers/level_0) |
+    | **_Lv.1_** | [_Link_](https://github.com/songforthemute/codingInterview/tree/master/js/programmers/level_1) | ...                                                                                                  | ...                                                                                             |
+    | **_Lv.2_** | [_Link_](https://github.com/songforthemute/codingInterview/tree/master/js/programmers/level_2) | ...                                                                                                  | ...                                                                                             |
+    | **_Lv.3_** | [_Link_](https://github.com/songforthemute/codingInterview/tree/master/js/programmers/level_3) | ...                                                                                                  | ...                                                                                             |
+    | **_Lv.4_** | ...                                                                                            | ...                                                                                                  | ...                                                                                             |
+    | **_Lv.5_** | ...                                                                                            | ...                                                                                                  | ...                                                                                             |
+
+---
 
 ## _leetcode_
 
