@@ -12,6 +12,7 @@
 ## _Language_
 
 -   Javascript by [_songforthemute_](https://github.com/songforthemute)
+-   C++ by [_songforthemute_](https://github.com/songforthemute)
 -   Java by [_0rganicPotato_](https://github.com/0rganicPotato)
 
 ---
