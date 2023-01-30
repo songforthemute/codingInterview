@@ -10,6 +10,7 @@ public class 외계행성의_나이 {
   public static String solution(int age) {
     String answer = "";
     String tmp = age + "";
+
     for (int i = 0; i < tmp.length(); i++) {
       answer += (char) (tmp.charAt(i) + 49);
     }
