@@ -29,4 +29,4 @@ const solution = (s, skip, index) => {
 
 // test cases
 console.log(solution("aukks", "wbqd", 5)); // happy
-console.log(solution("xyzabc", "yzabcd", 1)); // eeeeee
+console.log(solution("xyzabc", "defghi", 6)); // jklmno
