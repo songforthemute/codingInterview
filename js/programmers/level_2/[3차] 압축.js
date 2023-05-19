@@ -1,61 +1,51 @@
 // Lv. 2 [3차] 압축
 
 /**
- * @param {string} msg
- * @return {number[]}
+ * @param {string} msg 영문 대문자로만 이뤄진 문자열
+ * @return {number[]} 주어진 문자열을 압축한 후의 사전 색인 번호 배열
  */
 
-const solution = (msg) => {
+function solution(msg) {
     const result = [];
-    const dict = {
-        A: 1,
-        B: 2,
-        C: 3,
-        D: 4,
-        E: 5,
-        F: 6,
-        G: 7,
-        H: 8,
-        I: 9,
-        J: 10,
-        K: 11,
-        L: 12,
-        M: 13,
-        N: 14,
-        O: 15,
-        P: 16,
-        Q: 17,
-        R: 18,
-        S: 19,
-        T: 20,
-        U: 21,
-        V: 22,
-        W: 23,
-        X: 24,
-        Y: 25,
-        Z: 26,
-    };
+    const hash = {};
+
+    // init index for hash
+    (function init() {
+        for (let i = 1; i <= 26; i++) {
+            hash[String.fromCharCode(i + 64)] = i;
+        }
+    })();
 
     let i = 0;
-    let last = 27;
+    let last = 27; // maybe next index for register to hash
 
-    const processing = (str, idx) => {
-        if (msg[idx] !== undefined && dict[str + msg[idx + 1]] !== undefined) {
-            return processing(str + msg[idx + 1], idx + 1);
+    const processing = (chars, idx) => {
+        // if current char is exist && if current chars is already registered in hash
+        if (msg[idx] && hash[chars + msg[idx + 1]]) {
+            // extends range
+            return processing(chars + msg[idx + 1], idx + 1);
         }
 
-        result.push(dict[str]);
-        dict[str + (msg[idx + 1] ?? "_")] = last;
+        // else case
+        // appeared non-registered chars
+        result.push(hash[chars]);
 
-        i = idx + 1;
-        last++;
+        // register current chars
+        hash[chars + (msg[idx + 1] ?? "_")] = last;
 
-        return;
+        i = idx + 1; // renew new starting range
+        last++; // renew index for next registerable
     };
 
-    while (msg[i] !== undefined) {
+    // till non-existing valid chars
+    while (msg[i]) {
         processing(msg[i], i);
     }
 
     return result;
-};
+}
+
+// test cases
+console.log(solution("KAKAO")); // [11, 1, 27, 15]
+console.log(solution("TOBEORNOTTOBEORTOBEORNOT")); // [20, 15, 2, 5, 15, 18, 14, 15, 20, 27, 29, 31, 36, 30, 32, 34]
+console.log(solution("ABABABABABABABAB")); // [1, 2, 27, 29, 28, 31, 30]
